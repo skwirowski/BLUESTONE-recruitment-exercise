@@ -7,6 +7,8 @@ module.exports = {
     'airbnb',
     'plugin:prettier/recommended',
     'prettier/react',
+    'plugin:import/errors',
+    'plugin:import/warnings'
   ],
   globals: {
     Atomics: 'readonly',
@@ -24,5 +26,20 @@ module.exports = {
     'prettier'
   ],
   rules: {
+    'import/no-extraneous-dependencies':
+      [
+        'error', {
+          'devDependencies': true,
+          'optionalDependencies': false,
+          'peerDependencies': false
+        }
+      ]
   },
+  settings: {
+    'import/resolver': {
+      'node': {
+        'moduleDirectory': ['node_modules', 'src/']
+      }
+    }
+  }
 };
