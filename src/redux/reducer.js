@@ -7,25 +7,49 @@ const INITIAL_STATE = {
 };
 
 const {
-  PRODUCTS_FETCH_REQUESTED,
-  PRODUCTS_FETCH_SUCCEEDED,
-  PRODUCTS_FETCH_FAILED,
+  PRODUCTS_LIST_FETCH_REQUESTED,
+  PRODUCTS_LIST_FETCH_SUCCEEDED,
+  PRODUCTS_LIST_FETCH_FAILED,
+
+  PRODUCT_FETCH_REQUESTED,
+  PRODUCT_FETCH_SUCCEEDED,
+  PRODUCT_FETCH_FAILED,
 } = types;
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case PRODUCTS_FETCH_REQUESTED:
+    case PRODUCTS_LIST_FETCH_REQUESTED:
       return {
         ...state,
         productsListLoading: true,
       };
-    case PRODUCTS_FETCH_SUCCEEDED:
+    case PRODUCTS_LIST_FETCH_SUCCEEDED:
       return {
         ...state,
         productsListLoading: false,
         productsList: action.payload,
       };
-    case PRODUCTS_FETCH_FAILED:
+    case PRODUCTS_LIST_FETCH_FAILED:
+      return {
+        ...state,
+        productsListLoading: false,
+        error: action.payload,
+      };
+
+    case PRODUCT_FETCH_REQUESTED:
+      return {
+        ...state,
+        productsListLoading: true,
+      };
+    case PRODUCT_FETCH_SUCCEEDED:
+      return {
+        ...state,
+        productsListLoading: false,
+        productsList: state.productsList.map((product, index) =>
+          index === action.index ? { ...action.payload } : product
+        ),
+      };
+    case PRODUCT_FETCH_FAILED:
       return {
         ...state,
         productsListLoading: false,

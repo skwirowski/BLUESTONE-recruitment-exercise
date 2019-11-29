@@ -3,9 +3,9 @@ import types from 'redux/types';
 import getData from 'services/getRequest';
 
 const {
-  PRODUCTS_FETCH_REQUESTED,
-  PRODUCTS_FETCH_SUCCEEDED,
-  PRODUCTS_FETCH_FAILED,
+  PRODUCTS_LIST_FETCH_REQUESTED,
+  PRODUCTS_LIST_FETCH_SUCCEEDED,
+  PRODUCTS_LIST_FETCH_FAILED,
 } = types;
 
 function* fetchProductsList() {
@@ -13,19 +13,19 @@ function* fetchProductsList() {
     const productsList = yield getData();
 
     yield put({
-      type: PRODUCTS_FETCH_SUCCEEDED,
+      type: PRODUCTS_LIST_FETCH_SUCCEEDED,
       payload: productsList,
     });
   } catch (error) {
     yield put({
-      type: PRODUCTS_FETCH_FAILED,
+      type: PRODUCTS_LIST_FETCH_FAILED,
       payload: error,
     });
   }
 }
 
-function* actionWatcher() {
-  yield takeLatest(PRODUCTS_FETCH_REQUESTED, fetchProductsList);
+function* productsListFetchActionWatcher() {
+  yield takeLatest(PRODUCTS_LIST_FETCH_REQUESTED, fetchProductsList);
 }
 
-export default actionWatcher;
+export default productsListFetchActionWatcher;

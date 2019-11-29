@@ -1,9 +1,14 @@
 import types from 'redux/types';
 
-const { PRODUCTS_FETCH_REQUESTED } = types;
+const { PRODUCTS_LIST_FETCH_REQUESTED, PRODUCT_FETCH_REQUESTED } = types;
 
 const fetchProductsList = () => ({
-  type: PRODUCTS_FETCH_REQUESTED,
+  type: PRODUCTS_LIST_FETCH_REQUESTED,
 });
 
-export default fetchProductsList;
+const fetchProduct = index => ({
+  type: PRODUCT_FETCH_REQUESTED,
+  index,
+});
+
+export default { fetchProductsList, fetchProduct };

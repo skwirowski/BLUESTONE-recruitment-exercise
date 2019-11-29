@@ -1,29 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import fetchProductsList from 'redux/actions';
+import actions from 'redux/actions';
 import putData from 'services/putRequest';
+
+import Home from 'routes/Home';
+
+import 'static/styles/styles.css';
 
 function App() {
   const dispatch = useDispatch();
   const productsStore = useSelector(state => state);
-  const [productsList, setProductsList] = useState([]);
+  const { productsList, productsListLoading } = productsStore;
+  const { fetchProductsList, fetchProduct } = actions;
+
+  const [productsStateList, setProductsStateList] = useState([]);
 
   useEffect(() => {
     dispatch(fetchProductsList());
-    setProductsList(productsStore);
+    // putData();
   }, [dispatch]);
 
-  console.log('STORE: ', productsStore);
+  useEffect(() => {
+    if (productsList.length !== 0) setProductsStateList(productsList);
+  }, [productsList]);
 
-  // putData();
+  console.log('STORE: ', productsStore);
+  console.log('productsList: ', productsList);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
+    <div className="main-container">
+      {productsListLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <Home productsList={productsStateList} />
+      )}
     </div>
   );
 }
