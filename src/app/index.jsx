@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import fetchProductsList from 'redux/actions';
+import putData from 'services/putRequest';
 
 function App() {
   const dispatch = useDispatch();
@@ -13,6 +14,8 @@ function App() {
   }, [dispatch]);
 
   console.log('STORE: ', productsStore);
+
+  // putData();
 
   return (
     <div className="App">

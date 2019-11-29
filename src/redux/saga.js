@@ -1,5 +1,6 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import types from 'redux/types';
+import getData from 'services/getRequest';
 
 const {
   PRODUCTS_FETCH_REQUESTED,
@@ -7,17 +8,9 @@ const {
   PRODUCTS_FETCH_FAILED,
 } = types;
 
-async function temporaryDataFetch() {
-  const dataRequest = await fetch('https://randomuser.me/api/');
-  const parsedResponse = await dataRequest.json();
-  const data = await parsedResponse.results;
-
-  return data;
-}
-
 function* fetchProductsList() {
   try {
-    const productsList = yield temporaryDataFetch();
+    const productsList = yield getData();
 
     yield put({
       type: PRODUCTS_FETCH_SUCCEEDED,
