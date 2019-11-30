@@ -1,9 +1,9 @@
 import firebaseDatabaseURL from 'static/firebase';
 
 /** @param productIndex parameter is optional, if omitted function gets products list instead of single product */
-/** @param productIndex should be type string */
 export default async function getData(productIndex) {
-  const singleProduct = productIndex ? `/${productIndex}` : '';
+  const singleProduct =
+    productIndex || productIndex === 0 ? `/${productIndex}` : '';
 
   try {
     const response = await fetch(

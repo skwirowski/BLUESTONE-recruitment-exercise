@@ -10,11 +10,12 @@ const {
 
 function* fetchProduct(action) {
   try {
-    const productsList = yield getData(action.productIndex);
+    const product = yield getData(action.index);
 
     yield put({
       type: PRODUCT_FETCH_SUCCEEDED,
-      payload: productsList,
+      index: action.index,
+      payload: product,
     });
   } catch (error) {
     yield put({

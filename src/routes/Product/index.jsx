@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
 import routes from 'static/routes';
 import randomNumber from 'utils/randomNumber';
 
-// import 'routes/Home/styles/styles.css';
+import 'routes/Product/styles/styles.css';
 
 const Product = () => {
   const { id } = useParams();
   const currentProductIndex = Number(id) - 1;
-  const { home } = routes;
+  const { home, edit } = routes;
 
   const productsList = useSelector(state => state.productsList);
 
-  const [productsStateList, setProductsStateList] = useState(productsList);
+  const [currentProduct, setCurrentProduct] = useState(
+    productsList[currentProductIndex]
+  );
   const [productsLoading, setLoader] = useState(true);
 
   useEffect(() => {
     if (productsList.length !== 0) {
-      setProductsStateList(productsList);
+      setCurrentProduct(productsList[currentProductIndex]);
       setLoader(false);
     }
   }, [productsList]);
-
-  const product = productsStateList[currentProductIndex];
 
   return (
     <div className="wrapper">
@@ -31,16 +32,19 @@ const Product = () => {
         <div>Loading...</div>
       ) : (
         <div className="product">
-          <h2>{product.name}</h2>
-          <small>Product number: {product.number}</small>
+          <h2>{currentProduct.name}</h2>
+          <small>Product number: {currentProduct.number}</small>
+          <br />
+          <Link to={home}>Go back to products list</Link>
+          <br />
+          <Link to={edit(id)}>Edit product</Link>
           <h3>Description:</h3>
-          <p>{product.description}</p>
+          <p>{currentProduct.description}</p>
           <div>
-            {product.images.map(image => (
+            {currentProduct.images.map(image => (
               <img key={randomNumber(1000)} src={image.url} alt={image.name} />
             ))}
           </div>
-          <Link to={home}>Go back to products list</Link>
         </div>
       )}
     </div>

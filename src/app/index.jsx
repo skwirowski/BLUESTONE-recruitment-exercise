@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import routes from 'static/routes';
 import actions from 'redux/actions';
 import putData from 'services/putRequest';
-import routes from 'static/routes';
-
 import Home from 'routes/Home';
 import Product from 'routes/Product';
+import Form from 'routes/Form';
 
 import 'static/styles/styles.css';
 
@@ -16,7 +17,7 @@ function App() {
 
   const { productsList, productsListLoading } = productsStore;
   const { fetchProductsList } = actions;
-  const { home, details } = routes;
+  const { home, details, edit } = routes;
 
   const [productsStateList, setProductsStateList] = useState([]);
 
@@ -31,7 +32,6 @@ function App() {
 
   console.log('STORE: ', productsStore);
   console.log('productsList: ', productsList);
-  console.log('loading state: ', productsListLoading);
 
   return (
     <div className="main-container">
@@ -45,6 +45,9 @@ function App() {
             </Route>
             <Route exact path={details(':id')}>
               <Product />
+            </Route>
+            <Route exact path={edit(':id')}>
+              <Form />
             </Route>
           </Switch>
         </Router>

@@ -17,6 +17,8 @@ const {
 } = types;
 
 const reducer = (state = INITIAL_STATE, action) => {
+  console.log('reducer action index', action.index);
+  console.log('reducer action payload', action.payload);
   switch (action.type) {
     case PRODUCTS_LIST_FETCH_REQUESTED:
       return {

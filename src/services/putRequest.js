@@ -1,26 +1,11 @@
 import firebaseDatabaseURL from 'static/firebase';
 import dataModel from 'static/dataModel';
 
-const newData = {
-  name: 'Product 6 name',
-  number: 'Product 6 number',
-  description: 'Product 6 description',
-  images: [
-    {
-      url: 'Product 6 image 1 url',
-      name: 'Product 6 image 1 name',
-    },
-    {
-      url: 'Product 6 image 2 url',
-      name: 'Product 6 image 2 name',
-    },
-  ],
-};
-
 /** @param productIndex parameter is required otherwise paroduct list will be overwritten by single product */
-/** @param productIndex should be type string */
-export default async function putData(productIndex) {
-  const singleProduct = productIndex ? `/${productIndex}` : '';
+/** @param bodyData type object data to PUT under producIndex */
+export default async function putData(productIndex, bodyData) {
+  const singleProduct =
+    productIndex || productIndex === 0 ? `/${productIndex}` : '';
 
   try {
     const response = await fetch(
@@ -30,7 +15,7 @@ export default async function putData(productIndex) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(dataModel),
+        body: JSON.stringify(bodyData),
       }
     );
 
