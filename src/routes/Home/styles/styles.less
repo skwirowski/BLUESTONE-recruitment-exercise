@@ -1,22 +1,39 @@
 @import '../../../static/styles/settings.less';
 
 .home {
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
   margin: 0 auto;
 
   &__product {
+    max-width: 360px;
+    box-sizing: border-box;
     border: 1px solid lightgray;
     border-radius: 15px;
-    padding: 15px;
+    -webkit-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.4);
+    padding: 30px;
     margin: 15px auto;
 
     &--heading {
       margin: 0 0 15px 0;
     }
 
+    &--number {
+      display: inline-block;
+      color: @secondary-font-color;
+      margin: 0 0 10px 0;
+    }
+
     &--image {
       display: block;
       margin: 0 auto;
+    }
+
+    &--link {
+      .button-text-mix();
     }
   }
 }

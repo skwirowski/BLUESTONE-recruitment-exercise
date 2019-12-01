@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import routes from 'static/routes';
+import Button from 'components/Button';
 
 import 'routes/Home/styles/styles.css';
 
 const Home = ({ productsList }) => {
   const { details } = routes;
+
   return (
     <div className="home">
       {productsList.map(product => {
@@ -16,13 +18,19 @@ const Home = ({ productsList }) => {
         return (
           <div key={number} className="home__product">
             <h2 className="home__product--heading">{name}</h2>
-            <small>Product number: {number}</small>
+            <small className="home__product--number">
+              Product number: {number}
+            </small>
             <img
               src={images[0].url}
               alt={images[0].name}
               className="home__product--image"
             />
-            <Link to={details(number)}>Product details</Link>
+            <Button top="15px">
+              <Link to={details(number)} className="home__product--link">
+                Product details
+              </Link>
+            </Button>
           </div>
         );
       })}

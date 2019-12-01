@@ -12,19 +12,28 @@
   font-display: swap;
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
-body {
+.button-text-mix {
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  color: #212121;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
-.main-container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-top: 45px;
-  margin-right: auto;
-  margin-bottom: 45px;
-  margin-left: auto;
+.button-wrapper {
+  width: auto;
+  display: inline-block;
+  background-color: #1976D2;
+  border-radius: 4px;
+  transition: background-color 500ms ease;
+  padding: 8px;
+}
+.button-wrapper:hover {
+  background-color: #145ca4;
+  transition: background-color 500ms ease;
+}
+.button-wrapper:active {
+  background-color: #0e4377;
+  transition: background-color 500ms ease;
 }

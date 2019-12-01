@@ -1,0 +1,20 @@
+@import '../../../static/styles/settings.less';
+
+.button-wrapper {
+  width: auto;
+  display: inline-block;
+  background-color: @primary-color;
+  border-radius: 4px;
+  transition: background-color 500ms ease;
+  padding: 8px;
+
+  &:hover {
+    background-color: darken(@primary-color, 10%);
+    transition: background-color 500ms ease;
+  }
+
+  &:active {
+    background-color: darken(@primary-color, 20%);
+    transition: background-color 500ms ease;
+  }
+}
