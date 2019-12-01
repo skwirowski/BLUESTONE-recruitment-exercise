@@ -1,1 +1,72 @@
 @import '../../../static/styles/settings.less';
+
+.product {
+
+  &__item {
+
+    &--heading {
+      .heading-2-mix();
+    }
+
+    &--number {
+      .small-text-mix();
+    }
+
+    &--link {
+      .button-text-mix();
+    }
+
+    .secondary {
+      background-color: @secondary-color;
+      margin-left: 45px;
+    }
+
+    .link-icon {
+      position: relative;
+      padding-left: 43px;
+
+      &--arrow {
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: 0;
+        height: 27px;
+        width: 27px;
+        background-image: url('../../../static/images/left-arrow.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    &--description {
+      .heading-3-mix();
+    }
+
+    &--paragraph {
+      .paragraph-mix();
+    }
+
+    &--gallery {
+
+      .gallery {
+
+        &__description {
+          .heading-3-mix();
+        }
+
+        &__wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          align-items: center;
+
+          &--image {
+            display: block;
+            margin: 0 auto 30px;
+          }
+        }
+      }
+    }
+  }
+}

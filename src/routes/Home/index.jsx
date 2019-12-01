@@ -26,7 +26,7 @@ const Home = ({ productsList }) => {
               alt={images[0].name}
               className="home__product--image"
             />
-            <Button top="15px">
+            <Button customClassName="margin-top">
               <Link to={details(number)} className="home__product--link">
                 Product details
               </Link>

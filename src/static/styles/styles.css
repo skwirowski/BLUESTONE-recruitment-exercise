@@ -12,6 +12,15 @@
   font-display: swap;
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
+.button-text-mix {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -21,10 +30,10 @@ body {
   margin: 0;
 }
 .main-container {
+  padding-top: 45px;
   padding-right: 15px;
+  padding-bottom: 45px;
   padding-left: 15px;
-  margin-top: 45px;
   margin-right: auto;
-  margin-bottom: 45px;
   margin-left: auto;
 }

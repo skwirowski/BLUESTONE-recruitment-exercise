@@ -21,6 +21,17 @@
   line-height: 1.5;
   text-transform: uppercase;
 }
+.heading-2-mix {
+  font-size: 24px;
+  font-weight: 700;
+  color: #212121;
+  margin: 0 0 15px 0;
+}
+.small-text-mix {
+  display: block;
+  color: #616161;
+  margin: 0 0 10px 0;
+}
 .button-wrapper {
   width: auto;
   display: inline-block;

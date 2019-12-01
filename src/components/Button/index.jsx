@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 
 import 'components/Button/styles/styles.css';
 
-const Button = ({ children, top, right, bottom, left }) => {
-  const margins = {
-    marginTop: top,
-    marginRight: right,
-    marginBottom: bottom,
-    marginLeft: left,
-  };
+const Button = ({ children, customClassName }) => {
   return (
-    <div className="button-wrapper" style={margins}>
+    <div
+      className={`${
+        customClassName ? `button-wrapper ${customClassName}` : 'button-wrapper'
+      }`}
+    >
       {children}
     </div>
   );
@@ -23,17 +21,11 @@ Button.propTypes = {
     PropTypes.node,
     PropTypes.element,
   ]).isRequired,
-  top: PropTypes.string,
-  right: PropTypes.string,
-  bottom: PropTypes.string,
-  left: PropTypes.string,
+  customClassName: PropTypes.string,
 };
 
 Button.defaultProps = {
-  top: '',
-  right: '',
-  bottom: '',
-  left: '',
+  customClassName: '',
 };
 
 export default Button;

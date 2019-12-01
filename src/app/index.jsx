@@ -30,9 +30,6 @@ function App() {
     if (productsList.length !== 0) setProductsStateList(productsList);
   }, [productsList]);
 
-  console.log('STORE: ', productsStore);
-  console.log('productsList: ', productsList);
-
   return (
     <div className="main-container">
       {productsListLoading ? (
