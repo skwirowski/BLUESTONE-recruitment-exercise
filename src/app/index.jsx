@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchProductsList());
-  }, [dispatch]);
+  }, [dispatch, fetchProductsList]);
 
   useEffect(() => {
     if (productsList.length !== 0) setProductsStateList(productsList);

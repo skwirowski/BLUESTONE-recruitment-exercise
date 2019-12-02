@@ -13,6 +13,7 @@
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
 .button-text-mix {
+  display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -20,6 +21,7 @@
   color: #ffffff;
   line-height: 1.5;
   text-transform: uppercase;
+  padding: 8px;
 }
 .heading-2-mix {
   font-size: 24px;
@@ -57,6 +59,7 @@
   margin: 0 0 10px 0;
 }
 .product__item--link {
+  display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -64,6 +67,7 @@
   color: #ffffff;
   line-height: 1.5;
   text-transform: uppercase;
+  padding: 8px;
 }
 .product__item .secondary {
   background-color: #673AB7;
@@ -85,8 +89,8 @@
 .product__item .link-icon--arrow {
   display: block;
   position: absolute;
-  top: -5px;
-  left: 0;
+  top: 5px;
+  left: 8px;
   height: 27px;
   width: 27px;
   background-image: url('../../../static/images/left-arrow.svg');

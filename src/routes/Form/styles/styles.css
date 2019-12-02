@@ -13,6 +13,7 @@
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
 .button-text-mix {
+  display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -20,6 +21,7 @@
   color: #ffffff;
   line-height: 1.5;
   text-transform: uppercase;
+  padding: 8px;
 }
 .heading-2-mix {
   font-size: 24px;
@@ -61,6 +63,7 @@
   margin-top: 45px;
 }
 .edit-form--form-wrapper .cancel-edit--link {
+  display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -68,6 +71,7 @@
   color: #ffffff;
   line-height: 1.5;
   text-transform: uppercase;
+  padding: 8px;
 }
 .edit-form--form-wrapper .cancel-edit .link-icon {
   position: relative;
@@ -76,8 +80,8 @@
 .edit-form--form-wrapper .cancel-edit .link-icon--cross {
   display: block;
   position: absolute;
-  top: -4px;
-  left: 0;
+  top: 7px;
+  left: 8px;
   height: 24px;
   width: 24px;
   background-image: url('../../../static/images/close-cross.svg');
@@ -100,6 +104,7 @@
   transition: background-color 500ms ease;
 }
 .edit-form--form-wrapper .confirm-edit--input {
+  display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -107,8 +112,9 @@
   color: #ffffff;
   line-height: 1.5;
   text-transform: uppercase;
+  padding: 8px;
   background-color: transparent;
   border: none;
   outline: none;
-  padding: 0;
+  cursor: pointer;
 }

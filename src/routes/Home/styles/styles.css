@@ -13,6 +13,7 @@
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
 .button-text-mix {
+  display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -20,6 +21,7 @@
   color: #ffffff;
   line-height: 1.5;
   text-transform: uppercase;
+  padding: 8px;
 }
 .heading-2-mix {
   font-size: 24px;
@@ -82,6 +84,7 @@
   margin-top: 15px;
 }
 .home__product--link {
+  display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -89,4 +92,5 @@
   color: #ffffff;
   line-height: 1.5;
   text-transform: uppercase;
+  padding: 8px;
 }
