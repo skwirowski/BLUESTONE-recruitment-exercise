@@ -19,6 +19,17 @@
     .secondary {
       background-color: @secondary-color;
       margin-left: 45px;
+      transition: background-color 500ms ease;
+
+      &:hover {
+        background-color: darken(@secondary-color, 10%);
+        transition: background-color 500ms ease;
+      }
+
+      &:active {
+        background-color: darken(@secondary-color, 20%);
+        transition: background-color 500ms ease;
+      }
     }
 
     .link-icon {

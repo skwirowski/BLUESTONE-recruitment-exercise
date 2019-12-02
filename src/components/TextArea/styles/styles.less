@@ -1,1 +1,31 @@
 @import '../../../static/styles/settings.less';
+
+.textarea {
+  margin-top: 45px;
+
+  &__label {
+    display: block;
+    font-size: 16px;
+    font-weight: @primary-font-weight-regular;
+    color: @primary-font-color;
+    margin: 0 0 5px;
+  }
+
+  &__window {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    font-family: @primary-font-family;
+    line-height: 1.5;
+    color: @secondary-font-color;
+    font-size: 16px;
+    font-weight: @primary-font-weight-regular;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    padding: 6px 8px;
+  }
+}

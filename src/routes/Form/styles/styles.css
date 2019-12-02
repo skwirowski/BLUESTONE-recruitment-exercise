@@ -12,3 +12,103 @@
   font-display: swap;
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
+.button-text-mix {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+.heading-2-mix {
+  font-size: 24px;
+  font-weight: 700;
+  color: #212121;
+  margin: 0 0 15px 0;
+}
+.heading-3-mix {
+  font-size: 19px;
+  font-weight: 700;
+  color: #212121;
+  margin: 30px 0 15px;
+}
+.paragraph-mix {
+  font-size: 16px;
+  font-weight: 400;
+  color: #616161;
+  line-height: 1.5;
+  margin: 20px 0;
+}
+.small-text-mix {
+  display: block;
+  color: #616161;
+  margin: 0 0 10px 0;
+}
+.edit-form--heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #212121;
+  margin: 0 0 15px 0;
+}
+.edit-form--form-wrapper .images-edit {
+  margin-top: 45px;
+}
+.edit-form--form-wrapper .images-edit__wrapper {
+  margin-top: 45px;
+}
+.edit-form--form-wrapper .cancel-edit {
+  margin-top: 45px;
+}
+.edit-form--form-wrapper .cancel-edit--link {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+.edit-form--form-wrapper .cancel-edit .link-icon {
+  position: relative;
+  padding-left: 43px;
+}
+.edit-form--form-wrapper .cancel-edit .link-icon--cross {
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-image: url('../../../static/images/close-cross.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.edit-form--form-wrapper .confirm-edit {
+  background-color: #673AB7;
+  margin-top: 45px;
+  margin-left: 45px;
+  transition: background-color 500ms ease;
+}
+.edit-form--form-wrapper .confirm-edit:hover {
+  background-color: #512e90;
+  transition: background-color 500ms ease;
+}
+.edit-form--form-wrapper .confirm-edit:active {
+  background-color: #3b216a;
+  transition: background-color 500ms ease;
+}
+.edit-form--form-wrapper .confirm-edit--input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 1.5;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}

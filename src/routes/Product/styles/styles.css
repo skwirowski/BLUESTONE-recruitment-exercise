@@ -68,6 +68,15 @@
 .product__item .secondary {
   background-color: #673AB7;
   margin-left: 45px;
+  transition: background-color 500ms ease;
+}
+.product__item .secondary:hover {
+  background-color: #512e90;
+  transition: background-color 500ms ease;
+}
+.product__item .secondary:active {
+  background-color: #3b216a;
+  transition: background-color 500ms ease;
 }
 .product__item .link-icon {
   position: relative;

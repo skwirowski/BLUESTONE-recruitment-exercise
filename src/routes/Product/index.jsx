@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import routes from 'static/routes';
 import randomNumber from 'utils/randomNumber';
 import Button from 'components/Button';
+import Loader from 'components/Loader';
 
 import 'routes/Product/styles/styles.css';
 
@@ -25,12 +26,12 @@ const Product = () => {
       setCurrentProduct(productsList[currentProductIndex]);
       setLoader(false);
     }
-  }, [productsList]);
+  }, [productsList, currentProductIndex]);
 
   return (
     <div className="product">
       {productsLoading ? (
-        <div>Loading...</div>
+        <Loader />
       ) : (
         <div className="product__item">
           <h2 className="product__item--heading">{currentProduct.name}</h2>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import 'components/Input/styles/styles.css';
+import 'components/TextArea/styles/styles.css';
 
 const TextArea = ({
   id,

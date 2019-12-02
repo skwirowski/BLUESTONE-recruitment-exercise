@@ -1,1 +1,73 @@
 @import '../../../static/styles/settings.less';
+
+.edit {
+
+  &-form {
+
+    &--heading {
+      .heading-2-mix();
+    }
+
+    &--form-wrapper {
+
+      .images-edit {
+        margin-top: 45px;
+
+        &__wrapper {
+          margin-top: 45px;
+        }
+      }
+
+      .cancel-edit {
+        margin-top: 45px;
+
+        &--link {
+          .button-text-mix();
+        }
+
+        .link-icon {
+          position: relative;
+          padding-left: 43px;
+
+          &--cross {
+            display: block;
+            position: absolute;
+            top: -4px;
+            left: 0;
+            height: 24px;
+            width: 24px;
+            background-image: url('../../../static/images/close-cross.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          }
+        }
+      }
+
+      .confirm-edit {
+        background-color: @secondary-color;
+        margin-top: 45px;
+        margin-left: 45px;
+        transition: background-color 500ms ease;
+
+        &:hover {
+          background-color: darken(@secondary-color, 10%);
+          transition: background-color 500ms ease;
+        }
+
+        &:active {
+          background-color: darken(@secondary-color, 20%);
+          transition: background-color 500ms ease;
+        }
+
+        &--input {
+          .button-text-mix();
+          background-color: transparent;
+          border: none;
+          outline: none;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,4 @@
 import firebaseDatabaseURL from 'static/firebase';
-import dataModel from 'static/dataModel';
 
 /** @param productIndex parameter is required otherwise paroduct list will be overwritten by single product */
 /** @param bodyData type object data to PUT under producIndex */

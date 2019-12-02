@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import routes from 'static/routes';
 import actions from 'redux/actions';
-import putData from 'services/putRequest';
 import Home from 'routes/Home';
 import Product from 'routes/Product';
 import Form from 'routes/Form';
+import Loader from 'components/Loader';
 
 import 'static/styles/styles.css';
 
@@ -23,7 +23,6 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchProductsList());
-    // putData();
   }, [dispatch]);
 
   useEffect(() => {
@@ -33,7 +32,7 @@ function App() {
   return (
     <div className="main-container">
       {productsListLoading ? (
-        <div>Loading...</div>
+        <Loader />
       ) : (
         <Router>
           <Switch>

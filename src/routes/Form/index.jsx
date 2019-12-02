@@ -7,6 +7,8 @@ import actions from 'redux/actions';
 import putData from 'services/putRequest';
 import Input from 'components/Input';
 import TextArea from 'components/TextArea';
+import Button from 'components/Button';
+import Loader from 'components/Loader';
 
 import 'routes/Form/styles/styles.css';
 
@@ -28,7 +30,7 @@ const Form = () => {
       setFormState(productsList[currentProductIndex]);
       setLoader(false);
     }
-  }, [productsList]);
+  }, [productsList, currentProductIndex]);
 
   const handleInputChange = (event, key) => {
     setFormState({
@@ -68,14 +70,13 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <div className="edit">
       {productsLoading ? (
-        <div>Loading...</div>
+        <Loader />
       ) : (
-        <div className="edit">
-          <h2>Edit product &#x2116; {id}</h2>
-          <Link to={details(id)}>Cancel</Link>
-          <form onSubmit={handleFormSubmit} className="wrapper">
+        <div className="edit-form">
+          <h2 className="edit-form--heading">Edit product &#x2116; {id}</h2>
+          <form onSubmit={handleFormSubmit} className="edit-form--form-wrapper">
             <Input
               id="name-input"
               label="Change product name:"
@@ -90,30 +91,47 @@ const Form = () => {
               data={formState.description}
               onInputChange={e => handleInputChange(e, 'description')}
             />
-            {formState.images.map((image, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <div key={`image-${id}-${index}`}>
-                <Input
-                  id={`image-url-${id}-${index}`}
-                  label={`Change image ${index + 1} URL address:`}
-                  placeholder={`Image ${index + 1} URL address`}
-                  data={image.url}
-                  onInputChange={e =>
-                    handleNestedInputChange(e, 'images', index, 'url')
-                  }
-                />
-                <Input
-                  id={`image-name-${id}-${index}`}
-                  label={`Change image ${index + 1} description:`}
-                  placeholder={`Image ${index + 1} description`}
-                  data={image.name}
-                  onInputChange={e =>
-                    handleNestedInputChange(e, 'images', index, 'name')
-                  }
-                />
-              </div>
-            ))}
-            <input type="submit" value="submit" />
+            <div className="images-edit">
+              {formState.images.map((image, index) => (
+                <div
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={`image-${id}-${index}`}
+                  className="images-edit__wrapper"
+                >
+                  <Input
+                    id={`image-url-${id}-${index}`}
+                    label={`Change image ${index + 1} URL address:`}
+                    placeholder={`Image ${index + 1} URL address`}
+                    data={image.url}
+                    onInputChange={e =>
+                      handleNestedInputChange(e, 'images', index, 'url')
+                    }
+                  />
+                  <Input
+                    id={`image-name-${id}-${index}`}
+                    label={`Change image ${index + 1} description:`}
+                    placeholder={`Image ${index + 1} description`}
+                    data={image.name}
+                    onInputChange={e =>
+                      handleNestedInputChange(e, 'images', index, 'name')
+                    }
+                  />
+                </div>
+              ))}
+            </div>
+            <Button customClassName="cancel-edit">
+              <Link to={details(id)} className="cancel-edit--link link-icon">
+                <span className="link-icon--cross" />
+                Cancel
+              </Link>
+            </Button>
+            <Button customClassName="confirm-edit">
+              <input
+                type="submit"
+                value="submit"
+                className="confirm-edit--input"
+              />
+            </Button>
           </form>
         </div>
       )}
